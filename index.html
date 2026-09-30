@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="#home" class="logo">My<span>Portfolio</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <p class="greeting">Hello, I'm</p>
+                <h1 data-field="name">Muhammad Rizwan</h1>
+                <h2 data-field="role" class="role">Web Developer</h2>
+                <p class="tagline" data-field="tagline">
+                    I build beautiful, responsive websites that help businesses grow online.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Hire Me</a>
+                    <a href="#" class="btn btn-outline" id="resumeBtn"><i class="fas fa-download"></i> Download CV</a>
+                </div>
+                <div class="socials" id="socials">
+                    <a href="#" data-social="github"><i class="fab fa-github"></i></a>
+                    <a href="#" data-social="linkedin"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" data-social="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" data-social="instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-box">
+                    <img src="/R-R.png.jpeg" alt="Profile Photo" id="profilePic">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="about-content">
+                <p class="about-text" data-field="about">
+                    Write your introduction here. Tell visitors who you are, what you do,
+                    and what makes you unique. This section is fully editable in Edit Mode.
+                </p>
+                <div class="about-info">
+                    <div class="info-item"><span>Email:</span> <span data-field="email">rizwanullahmxeed.com</span></div>
+                    <div class="info-item"><span>Location:</span> <span data-field="location">KPK Dera Ismail Khan</span></div>
+                    <div class="info-item"><span>Experience:</span> <span data-field="experience">2+ Years</span></div>
+                    <div class="info-item"><span>Freelance:</span> <span data-field="freelance">Available</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title">My <span>Skills</span></h2>
+            <div class="skills-grid" id="skillsGrid">
+                <!-- Skills injected by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">My <span>Projects</span></h2>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects injected by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title">Education & <span>Experience</span></h2>
+            <div class="timeline" id="timeline">
+                <!-- Timeline injected by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact <span>Me</span></h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p data-field="contactText">Have a project in mind? Let's talk! Fill out the form or reach me directly.</p>
+                    <p><i class="fas fa-envelope"></i> <span data-field="email2">rizwanullahmxeed@gmail.com</span></p>
+                    <p><i class="fas fa-phone"></i> <span data-field="phone">+92 3370653105</span></p>
+                </div>
+                <form id="contactForm" class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© <span id="year"></span> <span data-field="name">Your Name</span>. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Edit Panel -->
+    <div class="edit-panel" id="editPanel">
+        <div class="edit-panel-header">
+            <h3>Edit Mode</h3>
+            <button id="closeEditBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="edit-panel-body">
+            <p class="edit-hint">Website par kisi bhi text par click karo aur directly type karo. Changes automatically save honge.</p>
+            <div class="edit-actions">
+                <button class="btn btn-primary" id="saveBtn">💾 Save All</button>
+                <button class="btn btn-outline" id="resetBtn">🔄 Reset Default</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

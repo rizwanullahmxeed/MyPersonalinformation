@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Rizwan — CV</title>
+  <style>
+    /* ── Reset & Base ──────────────────────────────────────────── */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      background: #eef2f7;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      line-height: 1.6;
+      color: #1e2a3a;
+    }
+
+    /* ── Page / Card ──────────────────────────────────────────── */
+    .cv-container {
+      max-width: 1000px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    /* ── Header ────────────────────────────────────────────────── */
+    .cv-header {
+      background: linear-gradient(135deg, #0b2b4a 0%, #1a4b6d 100%);
+      color: #fff;
+      padding: 48px 48px 40px;
+    }
+
+    .cv-header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .cv-header .subtitle {
+      font-size: 1.1rem;
+      font-weight: 400;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+
+    .header-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+      font-size: 0.95rem;
+    }
+
+    .header-contact span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.9;
+    }
+
+    .header-contact .icon {
+      font-size: 1.15rem;
+      opacity: 0.7;
+    }
+
+    /* ── Body Layout ──────────────────────────────────────────── */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 1fr 2.2fr;
+      gap: 0;
+    }
+
+    /* ── Sidebar (left) ────────────────────────────────────────── */
+    .sidebar {
+      background: #f8faff;
+      padding: 36px 28px;
+      border-right: 1px solid #e6edf4;
+    }
+
+    .sidebar-section {
+      margin-bottom: 32px;
+    }
+
+    .sidebar-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .sidebar-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #4b6a8a;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #d6e0ea;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .skill-name {
+      font-weight: 500;
+      font-size: 0.92rem;
+      color: #1e2a3a;
+    }
+
+    .skill-bar {
+      width: 90px;
+      height: 6px;
+      background: #dce5ef;
+      border-radius: 3px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #1a4b6d, #2f7aa8);
+    }
+
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px dashed #e0e8f0;
+    }
+
+    .lang-item:last-child {
+      border-bottom: none;
+    }
+
+    .lang-name {
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .lang-level {
+      font-size: 0.8rem;
+      color: #4b6a8a;
+      background: #e6edf4;
+      padding: 2px 10px;
+      border-radius: 12px;
+    }
+
+    .sidebar-text {
+      font-size: 0.92rem;
+      color: #2c3e55;
+      line-height: 1.7;
+    }
+
+    .sidebar-text strong {
+      color: #0b2b4a;
+    }
+
+    /* ── Main Content (right) ──────────────────────────────────── */
+    .main-content {
+      padding: 36px 36px 36px 32px;
+    }
+
+    .main-section {
+      margin-bottom: 32px;
+    }
+
+    .main-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .main-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #2f7aa8;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #d6e0ea;
+    }
+
+    .profile-text {
+      font-size: 0.95rem;
+      color: #2c3e55;
+      line-height: 1.7;
+    }
+
+    .entry {
+      margin-bottom: 20px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px 12px;
+      margin-bottom: 3px;
+    }
+
+    .entry-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0b2b4a;
+    }
+
+    .entry-sub {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: #1a4b6d;
+    }
+
+    .entry-date {
+      font-size: 0.82rem;
+      background: #eef4fa;
+      color: #1a4b6d;
+      padding: 2px 12px;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+
+    .entry-desc {
+      font-size: 0.92rem;
+      color: #2c3e55;
+      line-height: 1.7;
+      margin-top: 4px;
+    }
+
+    .entry-desc ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 4px;
+    }
+
+    .entry-desc ul li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 4px;
+    }
+
+    .entry-desc ul li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #2f7aa8;
+      font-weight: 700;
+    }
+
+    /* ── Extra / Custom Entries ────────────────────────────────── */
+    .custom-entry {
+      border-left: 3px solid #2f7aa8;
+      padding-left: 14px;
+      margin-bottom: 16px;
+    }
+
+    .custom-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .custom-entry .entry-header {
+      margin-bottom: 2px;
+    }
+
+    /* ── Utility ───────────────────────────────────────────────── */
+    .mt-1 { margin-top: 6px; }
+    .mt-2 { margin-top: 12px; }
+    .text-muted { color: #4b6a8a; font-size: 0.85rem; }
+
+    /* ── Print optimisation ────────────────────────────────────── */
+    @media print {
+      body { background: #fff; padding: 0; }
+      .cv-container { box-shadow: none; border-radius: 0; }
+      .sidebar { background: #f8faff; }
+    }
+
+    /* ── Responsive ────────────────────────────────────────────── */
+    @media (max-width: 700px) {
+      .cv-body { grid-template-columns: 1fr; }
+      .sidebar { border-right: none; border-bottom: 1px solid #e6edf4; }
+      .cv-header { padding: 32px 24px; }
+      .cv-header h1 { font-size: 2rem; }
+      .main-content { padding: 28px 24px; }
+      .sidebar { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="cv-container">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════════════════════ -->
+  <header class="cv-header">
+    <h1>Muhammad Rizwan</h1>
+    <div class="subtitle">Web Developer &amp; IT Professional</div>
+    <div class="header-contact">
+      <span><span class="icon">✉</span> rizwanullahmxeed@email.com</span>
+      <span><span class="icon">📞</span> +923140847475</span>
+      <span><span class="icon">📍</span> Dera Ismail Khan, Pakistan</span>
+      <span><span class="icon">🔗</span> linkedin.com/in/muhammadrizwan</span>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       BODY
+       ═══════════════════════════════════════════════════════════ -->
+  <div class="cv-body">
+
+    <!-- ─── SIDEBAR ──────────────────────────────────────────── -->
+    <aside class="sidebar">
+
+      <!-- Education -->
+      <section class="sidebar-section">
+        <h2 class="sidebar-title">Education</h2>
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-sub">Gomal University</span>
+            <span class="entry-date">D.I. Khan</span>
+          </div>
+          <div class="entry-desc">
+            Bachelor's / Degree Programme<br>
+            <span class="text-muted">Dera Ismail Khan, Pakistan</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="sidebar-section">
+        <h2 class="sidebar-title">Skills</h2>
+
+        <div class="skill-item">
+          <span class="skill-name">Web Development</span>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <span class="skill-name">Basic Networking</span>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:70%"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <span class="skill-name">Artificial Intelligence</span>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:65%"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <span class="skill-name">DIT Diploma</span>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+        </div>
+
+        <!-- ═══ CUSTOM SKILL SLOT ═══
+             Add more skills below by copying the .skill-item block
+             and adjusting the style="width:…%" value.
+        -->
+        <div class="skill-item" style="opacity:0.4; pointer-events:none;">
+          <span class="skill-name" style="font-style:italic;">+ Add skill</span>
+          <div class="skill-bar"><div class="skill-bar-fill" style="width:0%"></div></div>
+        </div>
+      </section>
+
+      <!-- Languages -->
+      <section class="sidebar-section">
+        <h2 class="sidebar-title">Languages</h2>
+
+        <div class="lang-item">
+          <span class="lang-name">Pashto</span>
+          <span class="lang-level">Native</span>
+        </div>
+
+        <div class="lang-item">
+          <span class="lang-name">Urdu</span>
+          <span class="lang-level">Fluent</span>
+        </div>
+
+        <div class="lang-item">
+          <span class="lang-name">English</span>
+          <span class="lang-level">Intermediate</span>
+        </div>
+
+        <!-- ═══ CUSTOM LANGUAGE SLOT ═══ -->
+        <div class="lang-item" style="opacity:0.3;">
+          <span class="lang-name" style="font-style:italic;">+ Add language</span>
+          <span class="lang-level" style="visibility:hidden;">—</span>
+        </div>
+      </section>
+
+      <!-- Additional Info placeholder -->
+      <section class="sidebar-section">
+        <h2 class="sidebar-title">Extra</h2>
+        <p class="sidebar-text" style="opacity:0.4; font-style:italic;">
+          Certifications, awards,<br>or other details go here.
+        </p>
+        <!-- ═══ CUSTOM SIDEBAR ENTRY ═══
+             Replace the placeholder above with your own content.
+        -->
+      </section>
+
+    </aside>
+
+    <!-- ─── MAIN CONTENT ─────────────────────────────────────── -->
+    <main class="main-content">
+
+      <!-- Profile -->
+      <section class="main-section">
+        <h2 class="main-title">Professional Profile</h2>
+        <p class="profile-text">
+          Passionate IT professional with a strong foundation in web development,
+          basic networking, and artificial intelligence. Holds a DIT Diploma and
+          is currently pursuing higher education at <strong>Gomal University, D.I. Khan</strong>.
+          Eager to contribute technical expertise and a problem-solving mindset
+          to modern development projects.
+        </p>
+      </section>
+
+      <!-- Experience / Projects placeholder -->
+      <section class="main-section">
+        <h2 class="main-title">Experience &amp; Projects</h2>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Web Development Projects</span>
+            <span class="entry-date">2026 – Present</span>
+          </div>
+          <div class="entry-desc">
+            Built responsive websites using HTML, CSS, JavaScript, and modern
+            frameworks. Focused on clean UI/UX and performance optimisation.
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Networking Internship</span>
+            <span class="entry-date">2026</span>
+          </div>
+          <div class="entry-desc">
+            Hands-on experience with LAN configuration, IP addressing, and
+            basic network troubleshooting in a small-office environment.
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">AI &amp; DIT Coursework</span>
+            <span class="entry-date">2023 – 2024</span>
+          </div>
+          <div class="entry-desc">
+            Completed a Diploma in Information Technology with modules in
+            artificial intelligence fundamentals, database management, and
+            system analysis.
+          </div>
+        </div>
+
+        <!-- ═══ CUSTOM EXPERIENCE SLOT ═══ -->
+        <div class="custom-entry" style="opacity:0.35;">
+          <div class="entry-header">
+            <span class="entry-title" style="font-style:italic;">+ Add role / project</span>
+            <span class="entry-date" style="background:transparent;">Date</span>
+          </div>
+          <div class="entry-desc" style="font-style:italic;">
+            Describe your responsibilities, tools used, and key achievements.
+          </div>
+        </div>
+      </section>
+
+      <!-- Additional custom section -->
+      <section class="main-section">
+        <h2 class="main-title">Additional Section</h2>
+        <div class="custom-entry" style="opacity:0.35;">
+          <div class="entry-header">
+            <span class="entry-title" style="font-style:italic;">+ Add heading</span>
+          </div>
+          <div class="entry-desc" style="font-style:italic;">
+            Volunteer work, publications, certifications, references, or any
+            other information you'd like to include.
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div><!-- /.cv-body -->
+</div><!-- /.cv-container -->
+
+</body>
+</html>
